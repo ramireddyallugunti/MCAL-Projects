@@ -1,0 +1,23 @@
+# Build output
+Debug/
+Release/
+
+# CMake build files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+build.ninja
+.ninja_deps
+.ninja_log
+
+# Generated binaries
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.a
+
+# IDE temporary files
+*.tmp
+*.log
