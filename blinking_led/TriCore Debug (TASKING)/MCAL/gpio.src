@@ -1,0 +1,1012 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc7736a --dep-file=MCAL/gpio.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc39xb -D__CPU_TC39XB__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc39xb -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Configurations -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\HAL -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Sfr\\\\TC39xB -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Service -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC39xB -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\MCAL -g2 -w544 -w557 -w508 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o MCAL/gpio.src ../MCAL/gpio.c"
+	.compiler_name		"ctc"
+	;source	'../MCAL/gpio.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.gpio.Gpio_GetPortBase',code,cluster('Gpio_GetPortBase')
+	.sect	'.text.gpio.Gpio_GetPortBase'
+	.align	2
+	
+; Function Gpio_GetPortBase
+.L32:
+Gpio_GetPortBase:	.type	func
+	mov	d15,#0
+	jeq	d15,d4,.L2
+.L159:
+	mov	d15,#1
+	jeq	d15,d4,.L3
+.L160:
+	mov	d15,#2
+	jeq	d15,d4,.L4
+.L161:
+	mov	d15,#3
+	jeq	d15,d4,.L5
+.L162:
+	mov	d15,#4
+	jeq	d15,d4,.L6
+	j	.L7
+.L2:
+	mov.u	d2,#40960
+.L89:
+	addih	d2,d2,#61443
+.L163:
+	j	.L8
+.L3:
+	mov.u	d2,#41216
+.L90:
+	addih	d2,d2,#61443
+.L164:
+	j	.L9
+.L4:
+	mov.u	d2,#41472
+.L91:
+	addih	d2,d2,#61443
+.L165:
+	j	.L10
+.L5:
+	mov.u	d2,#43520
+.L92:
+	addih	d2,d2,#61443
+.L166:
+	j	.L11
+.L6:
+	mov.u	d2,#43776
+.L93:
+	addih	d2,d2,#61443
+.L167:
+	j	.L12
+.L7:
+	mov	d2,#0
+.L12:
+.L11:
+.L10:
+.L9:
+.L8:
+	j	.L13
+.L13:
+	ret
+.L82:
+	
+__Gpio_GetPortBase_function_end:
+	.size	Gpio_GetPortBase,__Gpio_GetPortBase_function_end-Gpio_GetPortBase
+.L57:
+	; End of function
+	
+	.sdecl	'.text.gpio.Gpio_GetIOCR',code,cluster('Gpio_GetIOCR')
+	.sect	'.text.gpio.Gpio_GetIOCR'
+	.align	2
+	
+; Function Gpio_GetIOCR
+.L34:
+Gpio_GetIOCR:	.type	func
+	jge.u	d5,#4,.L14
+.L172:
+	add	d15,d4,#16
+.L94:
+	mov.a	a2,d15
+.L95:
+	j	.L15
+.L14:
+	jge.u	d5,#8,.L16
+.L173:
+	add	d15,d4,#20
+.L96:
+	mov.a	a2,d15
+.L97:
+	j	.L17
+.L16:
+	jge.u	d5,#12,.L18
+.L174:
+	add	d15,d4,#24
+.L98:
+	mov.a	a2,d15
+.L99:
+	j	.L19
+.L18:
+	add	d15,d4,#28
+.L100:
+	mov.a	a2,d15
+.L19:
+.L17:
+.L15:
+	j	.L20
+.L20:
+	ret
+.L85:
+	
+__Gpio_GetIOCR_function_end:
+	.size	Gpio_GetIOCR,__Gpio_GetIOCR_function_end-Gpio_GetIOCR
+.L62:
+	; End of function
+	
+	.sdecl	'.text.gpio.Gpio_InitPin',code,cluster('Gpio_InitPin')
+	.sect	'.text.gpio.Gpio_InitPin'
+	.align	2
+	
+	.global	Gpio_InitPin
+; Function Gpio_InitPin
+.L36:
+Gpio_InitPin:	.type	func
+	mov.aa	a15,a4
+.L102:
+	ld.bu	d4,[a15]
+	call	Gpio_GetPortBase
+.L101:
+	ld.bu	d15,[a15]1
+.L104:
+	mov	e4,d15,d2
+	call	Gpio_GetIOCR
+.L103:
+	mov	d0,#4
+.L128:
+	div.u	e0,d15,d0
+.L106:
+	mul	d0,d1,#8
+.L108:
+	add	d0,#3
+.L129:
+	ld.bu	d15,[a15]2
+.L105:
+	jne	d15,#0,.L21
+.L130:
+	ld.bu	d15,[a15]3
+.L131:
+	jne	d15,#1,.L22
+.L132:
+	mov	d15,#1
+.L109:
+	j	.L23
+.L22:
+	ld.bu	d15,[a15]3
+.L133:
+	jne	d15,#2,.L24
+.L134:
+	mov	d15,#2
+.L110:
+	j	.L25
+.L24:
+	mov	d15,#0
+.L25:
+.L23:
+	j	.L26
+.L21:
+	ld.bu	d15,[a15]4
+.L135:
+	jne	d15,#0,.L27
+.L136:
+	mov	d15,#16
+.L111:
+	j	.L28
+.L27:
+	mov	d15,#24
+.L28:
+.L26:
+	ld.w	d1,[a2]
+.L107:
+	mov	d2,#31
+.L137:
+	sh	d2,d2,d0
+.L138:
+	mov	d3,#-1
+	xor	d2,d3
+.L139:
+	and	d1,d2
+	st.w	[a2],d1
+.L140:
+	ld.w	d1,[a2]
+.L141:
+	and	d15,#31
+.L112:
+	sh	d15,d15,d0
+.L142:
+	or	d1,d15
+	st.w	[a2],d1
+.L143:
+	ret
+.L63:
+	
+__Gpio_InitPin_function_end:
+	.size	Gpio_InitPin,__Gpio_InitPin_function_end-Gpio_InitPin
+.L47:
+	; End of function
+	
+	.sdecl	'.text.gpio.Gpio_WritePin',code,cluster('Gpio_WritePin')
+	.sect	'.text.gpio.Gpio_WritePin'
+	.align	2
+	
+	.global	Gpio_WritePin
+; Function Gpio_WritePin
+.L38:
+Gpio_WritePin:	.type	func
+	mov	d8,d5
+.L114:
+	mov	d15,d6
+.L115:
+	call	Gpio_GetPortBase
+.L113:
+	jne	d15,#1,.L29
+.L148:
+	add	d2,#4
+.L117:
+	mov.a	a15,d2
+.L149:
+	mov	d15,#1
+.L116:
+	sh	d15,d15,d8
+.L150:
+	st.w	[a15],d15
+.L151:
+	j	.L30
+.L29:
+	add	d2,#4
+.L118:
+	mov.a	a15,d2
+.L152:
+	mov	d15,#1
+.L119:
+	add	d0,d8,#16
+.L153:
+	sh	d15,d15,d0
+.L154:
+	st.w	[a15],d15
+.L30:
+	ret
+.L74:
+	
+__Gpio_WritePin_function_end:
+	.size	Gpio_WritePin,__Gpio_WritePin_function_end-Gpio_WritePin
+.L52:
+	; End of function
+	
+	.calls	'Gpio_InitPin','Gpio_GetPortBase'
+	.calls	'Gpio_InitPin','Gpio_GetIOCR'
+	.calls	'Gpio_WritePin','Gpio_GetPortBase'
+	.calls	'Gpio_GetPortBase','',0
+	.calls	'Gpio_GetIOCR','',0
+	.calls	'Gpio_InitPin','',0
+	.calls	'Gpio_WritePin','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L40:
+	.word	1269
+	.half	3
+	.word	.L41
+	.byte	4
+.L39:
+	.byte	1
+	.byte	'../MCAL/gpio.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L42
+.L75:
+	.byte	2,1,35,9,1,3
+	.byte	'GPIO_PORT_00',0,0,3
+	.byte	'GPIO_PORT_01',0,1,3
+	.byte	'GPIO_PORT_02',0,2,3
+	.byte	'GPIO_PORT_10',0,3,3
+	.byte	'GPIO_PORT_11',0,4,3
+	.byte	'GPIO_PORT_12',0,5,3
+	.byte	'GPIO_PORT_13',0,6,3
+	.byte	'GPIO_PORT_14',0,7,3
+	.byte	'GPIO_PORT_15',0,8,3
+	.byte	'GPIO_PORT_20',0,9,3
+	.byte	'GPIO_PORT_21',0,10,3
+	.byte	'GPIO_PORT_22',0,11,3
+	.byte	'GPIO_PORT_23',0,12,3
+	.byte	'GPIO_PORT_24',0,13,3
+	.byte	'GPIO_PORT_25',0,14,3
+	.byte	'GPIO_PORT_26',0,15,3
+	.byte	'GPIO_PORT_30',0,16,3
+	.byte	'GPIO_PORT_31',0,17,3
+	.byte	'GPIO_PORT_32',0,18,3
+	.byte	'GPIO_PORT_33',0,19,3
+	.byte	'GPIO_PORT_34',0,20,3
+	.byte	'GPIO_PORT_4O',0,21,3
+	.byte	'GPIO_PORT_41',0,22,0
+.L77:
+	.byte	2,1,67,9,1,3
+	.byte	'GPIO_PIN0',0,0,3
+	.byte	'GPIO_PIN1',0,1,3
+	.byte	'GPIO_PIN2',0,2,3
+	.byte	'GPIO_PIN3',0,3,3
+	.byte	'GPIO_PIN4',0,4,3
+	.byte	'GPIO_PIN5',0,5,3
+	.byte	'GPIO_PIN6',0,6,3
+	.byte	'GPIO_PIN7',0,7,3
+	.byte	'GPIO_PIN8',0,8,3
+	.byte	'GPIO_PIN9',0,9,3
+	.byte	'GPIO_PIN10',0,10,3
+	.byte	'GPIO_PIN11',0,11,3
+	.byte	'GPIO_PIN12',0,12,3
+	.byte	'GPIO_PIN13',0,13,3
+	.byte	'GPIO_PIN14',0,14,3
+	.byte	'GPIO_PIN15',0,15,0,2,1,89,9,1,3
+	.byte	'GPIO_INPUT',0,0,3
+	.byte	'GPIO_OUTPUT',0,1,0,2,1,96,9,1,3
+	.byte	'GPIO_NO_CHANGE',0,0,3
+	.byte	'GPIO_PULL_DOWN',0,1,3
+	.byte	'GPIO_PULL_UP',0,2,0,2,1,104,9,1,3
+	.byte	'GPIO_PUSH_PULL',0,0,3
+	.byte	'GPIO_OPEN_DRAIN',0,1,0,4,1,118,9,6,5
+	.byte	'port',0
+	.word	188
+	.byte	1,2,35,0,5
+	.byte	'pin',0
+	.word	539
+	.byte	1,2,35,1,5
+	.byte	'direction',0
+	.word	743
+	.byte	1,2,35,2,5
+	.byte	'input',0
+	.word	776
+	.byte	1,2,35,3,5
+	.byte	'output',0
+	.word	831
+	.byte	1,2,35,4,0,6
+	.word	872
+.L64:
+	.byte	7
+	.word	955
+.L66:
+	.byte	8
+	.byte	'unsigned int',0,4,7,9
+	.word	965
+.L72:
+	.byte	7
+	.word	981
+.L79:
+	.byte	2,1,111,9,1,3
+	.byte	'GPIO_LOW',0,0,3
+	.byte	'GPIO_HIGH',0,1,0,10,1,7
+	.word	1020
+	.byte	11
+	.byte	'__codeptr',0,2,1,1
+	.word	1022
+	.byte	8
+	.byte	'int',0,4,5,11
+	.byte	'__intptr_t',0,2,1,1
+	.word	1045
+	.byte	11
+	.byte	'__uintptr_t',0,2,1,1
+	.word	965
+	.byte	11
+	.byte	'uint32_t',0,3,254,1,41
+	.word	965
+	.byte	11
+	.byte	'Gpio_PortType',0,1,64,2
+	.word	188
+	.byte	11
+	.byte	'Gpio_PinType',0,1,86,2
+	.word	539
+	.byte	11
+	.byte	'Gpio_DirectionType',0,1,93,2
+	.word	743
+	.byte	11
+	.byte	'Gpio_InputType',0,1,101,2
+	.word	776
+	.byte	11
+	.byte	'Gpio_OutputType',0,1,108,2
+	.word	831
+	.byte	11
+	.byte	'Gpio_Value',0,1,115,2
+	.word	991
+	.byte	11
+	.byte	'Gpio_Configuration',0,1,125,2
+	.word	872
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L41:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,4,1,58,15,59,15,57,15,11,15,0,0,3,40,0,3,8,28,13,0,0,4
+	.byte	19,1,58,15,59,15,57,15,11,15,0,0,5,13,0,3,8,73,19,11,15,56,9,0,0,6,38,0,73,19,0,0,7,15,0,73,19,0,0,8,36
+	.byte	0,3,8,11,15,62,15,0,0,9,53,0,73,19,0,0,10,21,0,54,15,0,0,11,22,0,3,8,58,15,59,15,57,15,73,19,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L42:
+	.word	.L121-.L120
+.L120:
+	.half	3
+	.word	.L123-.L122
+.L122:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\Infineon\\AURIX-Studio-1.10.36\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0,0
+	.byte	'..\\MCAL\\gpio.h',0,0,0,0
+	.byte	'../MCAL/gpio.c',0,0,0,0
+	.byte	'stdint.h',0,1,0,0,0
+.L123:
+.L121:
+	.sdecl	'.debug_info',debug,cluster('Gpio_InitPin')
+	.sect	'.debug_info'
+.L43:
+	.word	362
+	.half	3
+	.word	.L44
+	.byte	4,1
+	.byte	'../MCAL/gpio.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L46,.L45
+	.byte	2
+	.word	.L39
+	.byte	3
+	.byte	'Gpio_InitPin',0,1,92,6,1,1,1
+	.word	.L36,.L63,.L35
+	.byte	4
+	.byte	'config',0,1,92,45
+	.word	.L64,.L65
+	.byte	5
+	.word	.L36,.L63
+	.byte	6
+	.byte	'base',0,1,95,14
+	.word	.L66,.L67
+	.byte	6
+	.byte	'pin',0,1,96,14
+	.word	.L66,.L68
+	.byte	6
+	.byte	'pinIndex',0,1,97,14
+	.word	.L66,.L69
+	.byte	6
+	.byte	'shift',0,1,98,14
+	.word	.L66,.L70
+	.byte	6
+	.byte	'mode',0,1,99,14
+	.word	.L66,.L71
+	.byte	6
+	.byte	'iocr',0,1,101,24
+	.word	.L72,.L73
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Gpio_InitPin')
+	.sect	'.debug_abbrev'
+.L44:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Gpio_InitPin')
+	.sect	'.debug_line'
+.L45:
+	.word	.L125-.L124
+.L124:
+	.half	3
+	.word	.L127-.L126
+.L126:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../MCAL/gpio.c',0,0,0,0,0
+.L127:
+	.byte	5,6,7,0,5,2
+	.word	.L36
+	.byte	3,219,0,1,5,36,9
+	.half	.L102-.L36
+	.byte	3,12,1,5,29,9
+	.half	.L101-.L102
+	.byte	3,2,1,5,30,9
+	.half	.L104-.L101
+	.byte	3,3,1,5,22,9
+	.half	.L103-.L104
+	.byte	3,3,1,5,20,9
+	.half	.L128-.L103
+	.byte	1,5,23,9
+	.half	.L106-.L128
+	.byte	3,3,1,5,28,9
+	.half	.L108-.L106
+	.byte	1,5,15,9
+	.half	.L129-.L108
+	.byte	3,3,1,5,5,9
+	.half	.L105-.L129
+	.byte	1,5,19,7,9
+	.half	.L130-.L105
+	.byte	3,3,1,5,9,9
+	.half	.L131-.L130
+	.byte	1,5,18,7,9
+	.half	.L132-.L131
+	.byte	3,2,1,5,25,9
+	.half	.L109-.L132
+	.byte	1,5,24,9
+	.half	.L22-.L109
+	.byte	3,2,1,5,14,9
+	.half	.L133-.L22
+	.byte	1,5,18,7,9
+	.half	.L134-.L133
+	.byte	3,2,1,5,25,9
+	.half	.L110-.L134
+	.byte	1,5,18,9
+	.half	.L24-.L110
+	.byte	3,4,1,5,9,9
+	.half	.L23-.L24
+	.byte	3,122,1,5,19,9
+	.half	.L21-.L23
+	.byte	3,11,1,5,9,9
+	.half	.L135-.L21
+	.byte	1,5,18,7,9
+	.half	.L136-.L135
+	.byte	3,2,1,5,25,9
+	.half	.L111-.L136
+	.byte	1,5,18,9
+	.half	.L27-.L111
+	.byte	3,4,1,5,6,9
+	.half	.L26-.L27
+	.byte	3,5,1,5,16,9
+	.half	.L107-.L26
+	.byte	1,5,22,9
+	.half	.L137-.L107
+	.byte	1,5,14,9
+	.half	.L138-.L137
+	.byte	1,5,11,9
+	.half	.L139-.L138
+	.byte	1,5,6,9
+	.half	.L140-.L139
+	.byte	3,3,1,5,21,9
+	.half	.L141-.L140
+	.byte	1,5,29,9
+	.half	.L112-.L141
+	.byte	1,5,11,9
+	.half	.L142-.L112
+	.byte	1,5,1,9
+	.half	.L143-.L142
+	.byte	3,1,1,7,9
+	.half	.L47-.L143
+	.byte	0,1,1
+.L125:
+	.sdecl	'.debug_ranges',debug,cluster('Gpio_InitPin')
+	.sect	'.debug_ranges'
+.L46:
+	.word	-1,.L36,0,.L47-.L36,0,0
+	.sdecl	'.debug_info',debug,cluster('Gpio_WritePin')
+	.sect	'.debug_info'
+.L48:
+	.word	311
+	.half	3
+	.word	.L49
+	.byte	4,1
+	.byte	'../MCAL/gpio.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L51,.L50
+	.byte	2
+	.word	.L39
+	.byte	3
+	.byte	'Gpio_WritePin',0,1,155,1,6,1,1,1
+	.word	.L38,.L74,.L37
+	.byte	4
+	.byte	'port',0,1,155,1,34
+	.word	.L75,.L76
+	.byte	4
+	.byte	'pin',0,1,155,1,53
+	.word	.L77,.L78
+	.byte	4
+	.byte	'value',0,1,155,1,69
+	.word	.L79,.L80
+	.byte	5
+	.word	.L38,.L74
+	.byte	6
+	.byte	'base',0,1,157,1,14
+	.word	.L66,.L81
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Gpio_WritePin')
+	.sect	'.debug_abbrev'
+.L49:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Gpio_WritePin')
+	.sect	'.debug_line'
+.L50:
+	.word	.L145-.L144
+.L144:
+	.half	3
+	.word	.L147-.L146
+.L146:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../MCAL/gpio.c',0,0,0,0,0
+.L147:
+	.byte	5,6,7,0,5,2
+	.word	.L38
+	.byte	3,154,1,1,5,29,9
+	.half	.L115-.L38
+	.byte	3,5,1,5,5,9
+	.half	.L113-.L115
+	.byte	3,3,1,5,9,7,9
+	.half	.L148-.L113
+	.byte	3,2,1,5,27,9
+	.half	.L149-.L148
+	.byte	1,5,30,9
+	.half	.L116-.L149
+	.byte	1,5,24,9
+	.half	.L150-.L116
+	.byte	1,5,37,9
+	.half	.L151-.L150
+	.byte	1,5,9,9
+	.half	.L29-.L151
+	.byte	3,4,1,5,27,9
+	.half	.L152-.L29
+	.byte	1,5,37,9
+	.half	.L119-.L152
+	.byte	1,5,30,9
+	.half	.L153-.L119
+	.byte	1,5,24,9
+	.half	.L154-.L153
+	.byte	1,5,1,9
+	.half	.L30-.L154
+	.byte	3,2,1,7,9
+	.half	.L52-.L30
+	.byte	0,1,1
+.L145:
+	.sdecl	'.debug_ranges',debug,cluster('Gpio_WritePin')
+	.sect	'.debug_ranges'
+.L51:
+	.word	-1,.L38,0,.L52-.L38,0,0
+	.sdecl	'.debug_info',debug,cluster('Gpio_GetPortBase')
+	.sect	'.debug_info'
+.L53:
+	.word	278
+	.half	3
+	.word	.L54
+	.byte	4,1
+	.byte	'../MCAL/gpio.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L56,.L55
+	.byte	2
+	.word	.L39
+	.byte	3
+	.byte	'Gpio_GetPortBase',0,1,34,17
+	.word	.L66
+	.byte	1,1
+	.word	.L32,.L82,.L31
+	.byte	4
+	.byte	'port',0,1,34,48
+	.word	.L75,.L83
+	.byte	5
+	.word	.L32,.L82
+	.byte	6
+	.byte	'base',0,1,36,14
+	.word	.L66,.L84
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Gpio_GetPortBase')
+	.sect	'.debug_abbrev'
+.L54:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Gpio_GetPortBase')
+	.sect	'.debug_line'
+.L55:
+	.word	.L156-.L155
+.L155:
+	.half	3
+	.word	.L158-.L157
+.L157:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../MCAL/gpio.c',0,0,0,0,0
+.L158:
+	.byte	5,14,7,0,5,2
+	.word	.L32
+	.byte	3,40,1,9
+	.half	.L159-.L32
+	.byte	3,3,1,9
+	.half	.L160-.L159
+	.byte	3,3,1,9
+	.half	.L161-.L160
+	.byte	3,3,1,9
+	.half	.L162-.L161
+	.byte	3,3,1,5,34,9
+	.half	.L2-.L162
+	.byte	3,117,1,5,27,9
+	.half	.L163-.L2
+	.byte	3,1,1,5,34,9
+	.half	.L3-.L163
+	.byte	3,2,1,5,27,9
+	.half	.L164-.L3
+	.byte	3,1,1,5,34,9
+	.half	.L4-.L164
+	.byte	3,2,1,5,27,9
+	.half	.L165-.L4
+	.byte	3,1,1,5,34,9
+	.half	.L5-.L165
+	.byte	3,2,1,5,27,9
+	.half	.L166-.L5
+	.byte	3,1,1,5,34,9
+	.half	.L6-.L166
+	.byte	3,2,1,5,27,9
+	.half	.L167-.L6
+	.byte	3,1,1,5,22,9
+	.half	.L7-.L167
+	.byte	3,3,1,5,5,9
+	.half	.L8-.L7
+	.byte	3,3,1,5,1,9
+	.half	.L13-.L8
+	.byte	3,1,1,7,9
+	.half	.L57-.L13
+	.byte	0,1,1
+.L156:
+	.sdecl	'.debug_ranges',debug,cluster('Gpio_GetPortBase')
+	.sect	'.debug_ranges'
+.L56:
+	.word	-1,.L32,0,.L57-.L32,0,0
+	.sdecl	'.debug_info',debug,cluster('Gpio_GetIOCR')
+	.sect	'.debug_info'
+.L58:
+	.word	290
+	.half	3
+	.word	.L59
+	.byte	4,1
+	.byte	'../MCAL/gpio.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L61,.L60
+	.byte	2
+	.word	.L39
+	.byte	3
+	.byte	'Gpio_GetIOCR',0,1,65,27
+	.word	.L72
+	.byte	1,1
+	.word	.L34,.L85,.L33
+	.byte	4
+	.byte	'port',0,1,65,49
+	.word	.L66,.L86
+	.byte	4
+	.byte	'pin',0,1,65,67
+	.word	.L77,.L87
+	.byte	5
+	.word	.L34,.L85
+	.byte	6
+	.byte	'iocr',0,1,68,24
+	.word	.L72,.L88
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Gpio_GetIOCR')
+	.sect	'.debug_abbrev'
+.L59:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Gpio_GetIOCR')
+	.sect	'.debug_line'
+.L60:
+	.word	.L169-.L168
+.L168:
+	.half	3
+	.word	.L171-.L170
+.L170:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../MCAL/gpio.c',0,0,0,0,0
+.L171:
+	.byte	5,5,7,0,5,2
+	.word	.L34
+	.byte	3,198,0,1,5,39,7,9
+	.half	.L172-.L34
+	.byte	3,2,1,5,13,9
+	.half	.L94-.L172
+	.byte	1,5,58,9
+	.half	.L95-.L94
+	.byte	1,5,10,9
+	.half	.L14-.L95
+	.byte	3,2,1,5,39,7,9
+	.half	.L173-.L14
+	.byte	3,2,1,5,13,9
+	.half	.L96-.L173
+	.byte	1,5,58,9
+	.half	.L97-.L96
+	.byte	1,5,10,9
+	.half	.L16-.L97
+	.byte	3,2,1,5,39,7,9
+	.half	.L174-.L16
+	.byte	3,2,1,5,13,9
+	.half	.L98-.L174
+	.byte	1,5,58,9
+	.half	.L99-.L98
+	.byte	1,5,39,9
+	.half	.L18-.L99
+	.byte	3,4,1,5,13,9
+	.half	.L100-.L18
+	.byte	1,5,5,9
+	.half	.L15-.L100
+	.byte	3,3,1,5,1,9
+	.half	.L20-.L15
+	.byte	3,1,1,7,9
+	.half	.L62-.L20
+	.byte	0,1,1
+.L169:
+	.sdecl	'.debug_ranges',debug,cluster('Gpio_GetIOCR')
+	.sect	'.debug_ranges'
+.L61:
+	.word	-1,.L34,0,.L62-.L34,0,0
+	.sdecl	'.debug_loc',debug,cluster('Gpio_GetIOCR')
+	.sect	'.debug_loc'
+.L33:
+	.word	-1,.L34,0,.L85-.L34
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L88:
+	.word	-1,.L34,.L94-.L34,.L14-.L34
+	.half	1
+	.byte	95
+	.word	.L95-.L34,.L14-.L34
+	.half	1
+	.byte	98
+	.word	.L96-.L34,.L16-.L34
+	.half	1
+	.byte	95
+	.word	.L97-.L34,.L16-.L34
+	.half	1
+	.byte	98
+	.word	.L98-.L34,.L18-.L34
+	.half	1
+	.byte	95
+	.word	.L99-.L34,.L18-.L34
+	.half	1
+	.byte	98
+	.word	.L100-.L34,.L15-.L34
+	.half	1
+	.byte	95
+	.word	.L15-.L34,.L85-.L34
+	.half	1
+	.byte	98
+	.word	0,0
+.L87:
+	.word	-1,.L34,0,.L85-.L34
+	.half	1
+	.byte	85
+	.word	0,0
+.L86:
+	.word	-1,.L34,0,.L85-.L34
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Gpio_GetPortBase')
+	.sect	'.debug_loc'
+.L31:
+	.word	-1,.L32,0,.L82-.L32
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L84:
+	.word	-1,.L32,.L89-.L32,.L3-.L32
+	.half	1
+	.byte	82
+	.word	.L90-.L32,.L4-.L32
+	.half	1
+	.byte	82
+	.word	.L91-.L32,.L5-.L32
+	.half	1
+	.byte	82
+	.word	.L92-.L32,.L6-.L32
+	.half	1
+	.byte	82
+	.word	.L93-.L32,.L7-.L32
+	.half	1
+	.byte	82
+	.word	.L8-.L32,.L82-.L32
+	.half	1
+	.byte	82
+	.word	0,0
+.L83:
+	.word	-1,.L32,0,.L82-.L32
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Gpio_InitPin')
+	.sect	'.debug_loc'
+.L35:
+	.word	-1,.L36,0,.L63-.L36
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L67:
+	.word	-1,.L36,.L101-.L36,.L103-.L36
+	.half	1
+	.byte	82
+	.word	0,0
+.L65:
+	.word	-1,.L36,0,.L101-.L36
+	.half	1
+	.byte	100
+	.word	.L102-.L36,.L63-.L36
+	.half	1
+	.byte	111
+	.word	0,0
+.L73:
+	.word	-1,.L36,.L103-.L36,.L63-.L36
+	.half	1
+	.byte	98
+	.word	0,0
+.L71:
+	.word	-1,.L36,.L109-.L36,.L22-.L36
+	.half	1
+	.byte	95
+	.word	.L110-.L36,.L24-.L36
+	.half	1
+	.byte	95
+	.word	.L23-.L36,.L21-.L36
+	.half	1
+	.byte	95
+	.word	.L111-.L36,.L27-.L36
+	.half	1
+	.byte	95
+	.word	.L26-.L36,.L112-.L36
+	.half	1
+	.byte	95
+	.word	0,0
+.L68:
+	.word	-1,.L36,.L104-.L36,.L105-.L36
+	.half	1
+	.byte	95
+	.word	0,0
+.L69:
+	.word	-1,.L36,.L106-.L36,.L107-.L36
+	.half	1
+	.byte	81
+	.word	0,0
+.L70:
+	.word	-1,.L36,.L108-.L36,.L63-.L36
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Gpio_WritePin')
+	.sect	'.debug_loc'
+.L37:
+	.word	-1,.L38,0,.L74-.L38
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L81:
+	.word	-1,.L38,.L113-.L38,.L117-.L38
+	.half	1
+	.byte	82
+	.word	.L29-.L38,.L118-.L38
+	.half	1
+	.byte	82
+	.word	0,0
+.L78:
+	.word	-1,.L38,0,.L113-.L38
+	.half	1
+	.byte	85
+	.word	.L114-.L38,.L74-.L38
+	.half	1
+	.byte	88
+	.word	0,0
+.L76:
+	.word	-1,.L38,0,.L113-.L38
+	.half	1
+	.byte	84
+	.word	0,0
+.L80:
+	.word	-1,.L38,0,.L113-.L38
+	.half	1
+	.byte	86
+	.word	.L115-.L38,.L116-.L38
+	.half	1
+	.byte	95
+	.word	.L29-.L38,.L119-.L38
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L175:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('Gpio_GetPortBase')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L175,.L32,.L82-.L32
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('Gpio_GetIOCR')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L175,.L34,.L85-.L34
+	.byte	8,19,8,20,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('Gpio_InitPin')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L175,.L36,.L63-.L36
+	.sdecl	'.debug_frame',debug,cluster('Gpio_WritePin')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L175,.L38,.L74-.L38
+	; Module end

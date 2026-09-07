@@ -1,0 +1,758 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc15932a --dep-file=HAL/led.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc39xb -D__CPU_TC39XB__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc39xb -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Configurations -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\HAL -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Sfr\\\\TC39xB -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Ssw -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Infra\\\\Ssw\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Service -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Pms\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\Libraries\\\\iLLD\\\\TC3xx\\\\Tricore\\\\_PinMap\\\\TC39xB -IC:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\MCAL -g2 -w544 -w557 -w508 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o HAL/led.src ../HAL/led.c"
+	.compiler_name		"ctc"
+	;source	'../HAL/led.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.led.Led_Init',code,cluster('Led_Init')
+	.sect	'.text.led.Led_Init'
+	.align	2
+	
+	.global	Led_Init
+; Function Led_Init
+.L19:
+Led_Init:	.type	func
+	sub.a	a10,#24
+.L53:
+	mov	d15,#0
+.L68:
+	st.b	[a10],d15
+.L69:
+	mov	d15,#0
+.L70:
+	st.b	[a10]1,d15
+.L71:
+	mov	d15,#1
+.L72:
+	st.b	[a10]2,d15
+.L73:
+	mov	d15,#0
+.L74:
+	st.b	[a10]3,d15
+.L75:
+	mov	d15,#0
+.L76:
+	st.b	[a10]4,d15
+.L77:
+	lea	a4,[a10]0
+	call	Gpio_InitPin
+.L78:
+	mov	d15,#0
+.L79:
+	st.b	[a10]6,d15
+.L80:
+	mov	d15,#0
+.L81:
+	st.b	[a10]7,d15
+.L82:
+	mov	d15,#1
+.L83:
+	st.b	[a10]8,d15
+.L84:
+	mov	d15,#0
+.L85:
+	st.b	[a10]9,d15
+.L86:
+	mov	d15,#0
+.L87:
+	st.b	[a10]10,d15
+.L88:
+	lea	a4,[a10]6
+	call	Gpio_InitPin
+.L89:
+	mov	d15,#0
+.L90:
+	st.b	[a10]12,d15
+.L91:
+	mov	d15,#0
+.L92:
+	st.b	[a10]13,d15
+.L93:
+	mov	d15,#1
+.L94:
+	st.b	[a10]14,d15
+.L95:
+	mov	d15,#0
+.L96:
+	st.b	[a10]15,d15
+.L97:
+	mov	d15,#0
+.L98:
+	st.b	[a10]16,d15
+.L99:
+	lea	a4,[a10]12
+	call	Gpio_InitPin
+.L100:
+	ret
+.L43:
+	
+__Led_Init_function_end:
+	.size	Led_Init,__Led_Init_function_end-Led_Init
+.L32:
+	; End of function
+	
+	.sdecl	'.text.led.Led_On',code,cluster('Led_On')
+	.sect	'.text.led.Led_On'
+	.align	2
+	
+	.global	Led_On
+; Function Led_On
+.L21:
+Led_On:	.type	func
+	mov	d15,#0
+	jeq	d15,d4,.L2
+.L105:
+	mov	d15,#1
+	jeq	d15,d4,.L3
+.L106:
+	mov	d15,#2
+	jeq	d15,d4,.L4
+	j	.L5
+.L2:
+	mov	d4,#0
+.L54:
+	mov	d5,#0
+.L107:
+	mov	d6,#1
+	call	Gpio_WritePin
+.L108:
+	j	.L6
+.L3:
+	mov	d4,#0
+.L55:
+	mov	d5,#1
+.L109:
+	mov	d6,#1
+	call	Gpio_WritePin
+.L110:
+	j	.L7
+.L4:
+	mov	d4,#0
+.L56:
+	mov	d5,#2
+.L111:
+	mov	d6,#1
+	call	Gpio_WritePin
+.L112:
+	j	.L8
+.L5:
+	j	.L9
+.L9:
+.L8:
+.L7:
+.L6:
+	ret
+.L48:
+	
+__Led_On_function_end:
+	.size	Led_On,__Led_On_function_end-Led_On
+.L37:
+	; End of function
+	
+	.sdecl	'.text.led.Led_Off',code,cluster('Led_Off')
+	.sect	'.text.led.Led_Off'
+	.align	2
+	
+	.global	Led_Off
+; Function Led_Off
+.L23:
+Led_Off:	.type	func
+	mov	d15,#0
+	jeq	d15,d4,.L10
+.L117:
+	mov	d15,#1
+	jeq	d15,d4,.L11
+.L118:
+	mov	d15,#2
+	jeq	d15,d4,.L12
+	j	.L13
+.L10:
+	mov	d4,#0
+.L57:
+	mov	d5,#0
+.L119:
+	mov	d6,#0
+	call	Gpio_WritePin
+.L120:
+	j	.L14
+.L11:
+	mov	d4,#0
+.L58:
+	mov	d5,#1
+.L121:
+	mov	d6,#0
+	call	Gpio_WritePin
+.L122:
+	j	.L15
+.L12:
+	mov	d4,#0
+.L59:
+	mov	d5,#2
+.L123:
+	mov	d6,#0
+	call	Gpio_WritePin
+.L124:
+	j	.L16
+.L13:
+	j	.L17
+.L17:
+.L16:
+.L15:
+.L14:
+	ret
+.L51:
+	
+__Led_Off_function_end:
+	.size	Led_Off,__Led_Off_function_end-Led_Off
+.L42:
+	; End of function
+	
+	.calls	'Led_Init','Gpio_InitPin'
+	.calls	'Led_On','Gpio_WritePin'
+	.calls	'Led_Off','Gpio_WritePin'
+	.calls	'Led_Init','',24
+	.calls	'Led_On','',0
+	.extern	Gpio_InitPin
+	.extern	Gpio_WritePin
+	.calls	'Led_Off','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L25:
+	.word	1388
+	.half	3
+	.word	.L26
+	.byte	4
+.L24:
+	.byte	1
+	.byte	'../HAL/led.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L27
+	.byte	2,1,35,9,1,3
+	.byte	'GPIO_PORT_00',0,0,3
+	.byte	'GPIO_PORT_01',0,1,3
+	.byte	'GPIO_PORT_02',0,2,3
+	.byte	'GPIO_PORT_10',0,3,3
+	.byte	'GPIO_PORT_11',0,4,3
+	.byte	'GPIO_PORT_12',0,5,3
+	.byte	'GPIO_PORT_13',0,6,3
+	.byte	'GPIO_PORT_14',0,7,3
+	.byte	'GPIO_PORT_15',0,8,3
+	.byte	'GPIO_PORT_20',0,9,3
+	.byte	'GPIO_PORT_21',0,10,3
+	.byte	'GPIO_PORT_22',0,11,3
+	.byte	'GPIO_PORT_23',0,12,3
+	.byte	'GPIO_PORT_24',0,13,3
+	.byte	'GPIO_PORT_25',0,14,3
+	.byte	'GPIO_PORT_26',0,15,3
+	.byte	'GPIO_PORT_30',0,16,3
+	.byte	'GPIO_PORT_31',0,17,3
+	.byte	'GPIO_PORT_32',0,18,3
+	.byte	'GPIO_PORT_33',0,19,3
+	.byte	'GPIO_PORT_34',0,20,3
+	.byte	'GPIO_PORT_4O',0,21,3
+	.byte	'GPIO_PORT_41',0,22,0,2,1,67,9,1,3
+	.byte	'GPIO_PIN0',0,0,3
+	.byte	'GPIO_PIN1',0,1,3
+	.byte	'GPIO_PIN2',0,2,3
+	.byte	'GPIO_PIN3',0,3,3
+	.byte	'GPIO_PIN4',0,4,3
+	.byte	'GPIO_PIN5',0,5,3
+	.byte	'GPIO_PIN6',0,6,3
+	.byte	'GPIO_PIN7',0,7,3
+	.byte	'GPIO_PIN8',0,8,3
+	.byte	'GPIO_PIN9',0,9,3
+	.byte	'GPIO_PIN10',0,10,3
+	.byte	'GPIO_PIN11',0,11,3
+	.byte	'GPIO_PIN12',0,12,3
+	.byte	'GPIO_PIN13',0,13,3
+	.byte	'GPIO_PIN14',0,14,3
+	.byte	'GPIO_PIN15',0,15,0,2,1,89,9,1,3
+	.byte	'GPIO_INPUT',0,0,3
+	.byte	'GPIO_OUTPUT',0,1,0,2,1,96,9,1,3
+	.byte	'GPIO_NO_CHANGE',0,0,3
+	.byte	'GPIO_PULL_DOWN',0,1,3
+	.byte	'GPIO_PULL_UP',0,2,0,2,1,104,9,1,3
+	.byte	'GPIO_PUSH_PULL',0,0,3
+	.byte	'GPIO_OPEN_DRAIN',0,1,0
+.L44:
+	.byte	4,1,118,9,6,5
+	.byte	'port',0
+	.word	186
+	.byte	1,2,35,0,5
+	.byte	'pin',0
+	.word	537
+	.byte	1,2,35,1,5
+	.byte	'direction',0
+	.word	741
+	.byte	1,2,35,2,5
+	.byte	'input',0
+	.word	774
+	.byte	1,2,35,3,5
+	.byte	'output',0
+	.word	829
+	.byte	1,2,35,4,0,6
+	.word	870
+	.byte	7
+	.word	953
+	.byte	8
+	.byte	'Gpio_InitPin',0,1,129,1,6,1,1,1,1,9
+	.byte	'config',0,1,129,1,45
+	.word	958
+	.byte	0,2,1,111,9,1,3
+	.byte	'GPIO_LOW',0,0,3
+	.byte	'GPIO_HIGH',0,1,0,8
+	.byte	'Gpio_WritePin',0,1,132,1,6,1,1,1,1,9
+	.byte	'port',0,1,132,1,34
+	.word	186
+	.byte	9
+	.byte	'pin',0,1,132,1,52
+	.word	537
+	.byte	9
+	.byte	'value',0,1,132,1,67
+	.word	1002
+	.byte	0
+.L49:
+	.byte	2,2,34,9,1,3
+	.byte	'LED1',0,0,3
+	.byte	'LED2',0,1,3
+	.byte	'LED3',0,2,0,10,1,7
+	.word	1124
+	.byte	11
+	.byte	'__codeptr',0,3,1,1
+	.word	1126
+	.byte	12
+	.byte	'int',0,4,5,11
+	.byte	'__intptr_t',0,3,1,1
+	.word	1149
+	.byte	12
+	.byte	'unsigned int',0,4,7,11
+	.byte	'__uintptr_t',0,3,1,1
+	.word	1175
+	.byte	11
+	.byte	'Gpio_PortType',0,1,64,2
+	.word	186
+	.byte	11
+	.byte	'Gpio_PinType',0,1,86,2
+	.word	537
+	.byte	11
+	.byte	'Gpio_DirectionType',0,1,93,2
+	.word	741
+	.byte	11
+	.byte	'Gpio_InputType',0,1,101,2
+	.word	774
+	.byte	11
+	.byte	'Gpio_OutputType',0,1,108,2
+	.word	829
+	.byte	11
+	.byte	'Gpio_Value',0,1,115,2
+	.word	1002
+	.byte	11
+	.byte	'Gpio_Configuration',0,1,125,2
+	.word	870
+	.byte	11
+	.byte	'led_type',0,2,39,2
+	.word	1097
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L26:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,4,1,58,15,59,15,57,15,11,15,0,0,3,40,0,3,8,28,13,0,0,4
+	.byte	19,1,58,15,59,15,57,15,11,15,0,0,5,13,0,3,8,73,19,11,15,56,9,0,0,6,38,0,73,19,0,0,7,15,0,73,19,0,0,8,46
+	.byte	1,3,8,58,15,59,15,57,15,54,15,39,12,63,12,60,12,0,0,9,5,0,3,8,58,15,59,15,57,15,73,19,0,0,10,21,0,54,15
+	.byte	0,0,11,22,0,3,8,58,15,59,15,57,15,73,19,0,0,12,36,0,3,8,11,15,62,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L27:
+	.word	.L61-.L60
+.L60:
+	.half	3
+	.word	.L63-.L62
+.L62:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\\\Users\\\\ramal\\\\AURIX-v1.10.36-workspace\\\\blinking_led\\\\MCAL',0,0
+	.byte	'gpio.h',0,1,0,0
+	.byte	'..\\HAL\\led.h',0,0,0,0
+	.byte	'../HAL/led.c',0,0,0,0,0
+.L63:
+.L61:
+	.sdecl	'.debug_info',debug,cluster('Led_Init')
+	.sect	'.debug_info'
+.L28:
+	.word	303
+	.half	3
+	.word	.L29
+	.byte	4,1
+	.byte	'../HAL/led.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L31,.L30
+	.byte	2
+	.word	.L24
+	.byte	3
+	.byte	'Led_Init',0,1,33,6,1,1,1
+	.word	.L19,.L43,.L18
+	.byte	4
+	.word	.L19,.L43
+	.byte	5
+	.byte	'led_config1',0,1,37,24
+	.word	.L44,.L45
+	.byte	5
+	.byte	'led_config2',0,1,38,24
+	.word	.L44,.L46
+	.byte	5
+	.byte	'led_config3',0,1,39,24
+	.word	.L44,.L47
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Led_Init')
+	.sect	'.debug_abbrev'
+.L29:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Led_Init')
+	.sect	'.debug_line'
+.L30:
+	.word	.L65-.L64
+.L64:
+	.half	3
+	.word	.L67-.L66
+.L66:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../HAL/led.c',0,0,0,0,0
+.L67:
+	.byte	5,6,7,0,5,2
+	.word	.L19
+	.byte	3,32,1,5,24,9
+	.half	.L53-.L19
+	.byte	3,9,1,5,22,9
+	.half	.L68-.L53
+	.byte	1,5,24,9
+	.half	.L69-.L68
+	.byte	3,1,1,5,22,9
+	.half	.L70-.L69
+	.byte	1,5,29,9
+	.half	.L71-.L70
+	.byte	3,1,1,5,27,9
+	.half	.L72-.L71
+	.byte	1,5,25,9
+	.half	.L73-.L72
+	.byte	3,1,1,5,23,9
+	.half	.L74-.L73
+	.byte	1,5,26,9
+	.half	.L75-.L74
+	.byte	3,1,1,5,24,9
+	.half	.L76-.L75
+	.byte	1,5,19,9
+	.half	.L77-.L76
+	.byte	3,4,1,5,24,9
+	.half	.L78-.L77
+	.byte	3,3,1,5,22,9
+	.half	.L79-.L78
+	.byte	1,5,24,9
+	.half	.L80-.L79
+	.byte	3,1,1,5,22,9
+	.half	.L81-.L80
+	.byte	1,5,29,9
+	.half	.L82-.L81
+	.byte	3,1,1,5,27,9
+	.half	.L83-.L82
+	.byte	1,5,25,9
+	.half	.L84-.L83
+	.byte	3,1,1,5,23,9
+	.half	.L85-.L84
+	.byte	1,5,26,9
+	.half	.L86-.L85
+	.byte	3,1,1,5,24,9
+	.half	.L87-.L86
+	.byte	1,5,19,9
+	.half	.L88-.L87
+	.byte	3,2,1,5,24,9
+	.half	.L89-.L88
+	.byte	3,3,1,5,22,9
+	.half	.L90-.L89
+	.byte	1,5,24,9
+	.half	.L91-.L90
+	.byte	3,1,1,5,22,9
+	.half	.L92-.L91
+	.byte	1,5,29,9
+	.half	.L93-.L92
+	.byte	3,1,1,5,27,9
+	.half	.L94-.L93
+	.byte	1,5,25,9
+	.half	.L95-.L94
+	.byte	3,1,1,5,23,9
+	.half	.L96-.L95
+	.byte	1,5,26,9
+	.half	.L97-.L96
+	.byte	3,1,1,5,24,9
+	.half	.L98-.L97
+	.byte	1,5,19,9
+	.half	.L99-.L98
+	.byte	3,2,1,5,1,9
+	.half	.L100-.L99
+	.byte	3,1,1,7,9
+	.half	.L32-.L100
+	.byte	0,1,1
+.L65:
+	.sdecl	'.debug_ranges',debug,cluster('Led_Init')
+	.sect	'.debug_ranges'
+.L31:
+	.word	-1,.L19,0,.L32-.L19,0,0
+	.sdecl	'.debug_info',debug,cluster('Led_On')
+	.sect	'.debug_info'
+.L33:
+	.word	244
+	.half	3
+	.word	.L34
+	.byte	4,1
+	.byte	'../HAL/led.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L36,.L35
+	.byte	2
+	.word	.L24
+	.byte	3
+	.byte	'Led_On',0,1,72,6,1,1,1
+	.word	.L21,.L48,.L20
+	.byte	4
+	.byte	'led',0,1,72,22
+	.word	.L49,.L50
+	.byte	5
+	.word	.L21,.L48
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Led_On')
+	.sect	'.debug_abbrev'
+.L34:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Led_On')
+	.sect	'.debug_line'
+.L35:
+	.word	.L102-.L101
+.L101:
+	.half	3
+	.word	.L104-.L103
+.L103:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../HAL/led.c',0,0,0,0,0
+.L104:
+	.byte	5,14,7,0,5,2
+	.word	.L21
+	.byte	3,204,0,1,9
+	.half	.L105-.L21
+	.byte	3,3,1,9
+	.half	.L106-.L105
+	.byte	3,3,1,5,27,9
+	.half	.L2-.L106
+	.byte	3,123,1,5,40,9
+	.half	.L54-.L2
+	.byte	1,5,50,9
+	.half	.L107-.L54
+	.byte	1,5,13,9
+	.half	.L108-.L107
+	.byte	3,1,1,5,27,9
+	.half	.L3-.L108
+	.byte	3,2,1,5,40,9
+	.half	.L55-.L3
+	.byte	1,5,50,9
+	.half	.L109-.L55
+	.byte	1,5,13,9
+	.half	.L110-.L109
+	.byte	3,1,1,5,27,9
+	.half	.L4-.L110
+	.byte	3,2,1,5,40,9
+	.half	.L56-.L4
+	.byte	1,5,50,9
+	.half	.L111-.L56
+	.byte	1,5,13,9
+	.half	.L112-.L111
+	.byte	3,1,1,9
+	.half	.L5-.L112
+	.byte	3,2,1,5,1,9
+	.half	.L6-.L5
+	.byte	3,2,1,7,9
+	.half	.L37-.L6
+	.byte	0,1,1
+.L102:
+	.sdecl	'.debug_ranges',debug,cluster('Led_On')
+	.sect	'.debug_ranges'
+.L36:
+	.word	-1,.L21,0,.L37-.L21,0,0
+	.sdecl	'.debug_info',debug,cluster('Led_Off')
+	.sect	'.debug_info'
+.L38:
+	.word	245
+	.half	3
+	.word	.L39
+	.byte	4,1
+	.byte	'../HAL/led.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\ramal\\AURIX-v1.10.36-workspace\\blinking_led\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L41,.L40
+	.byte	2
+	.word	.L24
+	.byte	3
+	.byte	'Led_Off',0,1,92,6,1,1,1
+	.word	.L23,.L51,.L22
+	.byte	4
+	.byte	'led',0,1,92,23
+	.word	.L49,.L52
+	.byte	5
+	.word	.L23,.L51
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('Led_Off')
+	.sect	'.debug_abbrev'
+.L39:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('Led_Off')
+	.sect	'.debug_line'
+.L40:
+	.word	.L114-.L113
+.L113:
+	.half	3
+	.word	.L116-.L115
+.L115:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../HAL/led.c',0,0,0,0,0
+.L116:
+	.byte	5,14,7,0,5,2
+	.word	.L23
+	.byte	3,224,0,1,9
+	.half	.L117-.L23
+	.byte	3,3,1,9
+	.half	.L118-.L117
+	.byte	3,3,1,5,27,9
+	.half	.L10-.L118
+	.byte	3,123,1,5,40,9
+	.half	.L57-.L10
+	.byte	1,5,50,9
+	.half	.L119-.L57
+	.byte	1,5,13,9
+	.half	.L120-.L119
+	.byte	3,1,1,5,27,9
+	.half	.L11-.L120
+	.byte	3,2,1,5,40,9
+	.half	.L58-.L11
+	.byte	1,5,50,9
+	.half	.L121-.L58
+	.byte	1,5,13,9
+	.half	.L122-.L121
+	.byte	3,1,1,5,27,9
+	.half	.L12-.L122
+	.byte	3,2,1,5,40,9
+	.half	.L59-.L12
+	.byte	1,5,50,9
+	.half	.L123-.L59
+	.byte	1,5,13,9
+	.half	.L124-.L123
+	.byte	3,1,1,9
+	.half	.L13-.L124
+	.byte	3,2,1,5,1,9
+	.half	.L14-.L13
+	.byte	3,2,1,7,9
+	.half	.L42-.L14
+	.byte	0,1,1
+.L114:
+	.sdecl	'.debug_ranges',debug,cluster('Led_Off')
+	.sect	'.debug_ranges'
+.L41:
+	.word	-1,.L23,0,.L42-.L23,0,0
+	.sdecl	'.debug_loc',debug,cluster('Led_Init')
+	.sect	'.debug_loc'
+.L18:
+	.word	-1,.L19,0,.L53-.L19
+	.half	2
+	.byte	138,0
+	.word	.L53-.L19,.L43-.L19
+	.half	2
+	.byte	138,24
+	.word	.L43-.L19,.L43-.L19
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L45:
+	.word	-1,.L19,0,.L43-.L19
+	.half	2
+	.byte	145,104
+	.word	0,0
+.L46:
+	.word	-1,.L19,0,.L43-.L19
+	.half	2
+	.byte	145,110
+	.word	0,0
+.L47:
+	.word	-1,.L19,0,.L43-.L19
+	.half	2
+	.byte	145,116
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Led_Off')
+	.sect	'.debug_loc'
+.L22:
+	.word	-1,.L23,0,.L51-.L23
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L52:
+	.word	-1,.L23,0,.L57-.L23
+	.half	1
+	.byte	84
+	.word	.L11-.L23,.L58-.L23
+	.half	1
+	.byte	84
+	.word	.L12-.L23,.L59-.L23
+	.half	1
+	.byte	84
+	.word	.L13-.L23,.L14-.L23
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('Led_On')
+	.sect	'.debug_loc'
+.L20:
+	.word	-1,.L21,0,.L48-.L21
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L50:
+	.word	-1,.L21,0,.L54-.L21
+	.half	1
+	.byte	84
+	.word	.L3-.L21,.L55-.L21
+	.half	1
+	.byte	84
+	.word	.L4-.L21,.L56-.L21
+	.half	1
+	.byte	84
+	.word	.L5-.L21,.L6-.L21
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L125:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('Led_Init')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L125,.L19,.L43-.L19
+	.byte	4
+	.word	(.L53-.L19)/2
+	.byte	19,24,22,26,3,19,138,24,4
+	.word	(.L43-.L53)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('Led_On')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L125,.L21,.L48-.L21
+	.sdecl	'.debug_frame',debug,cluster('Led_Off')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L125,.L23,.L51-.L23
+	; Module end
