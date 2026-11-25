@@ -14,7 +14,6 @@
 #define   ADC_INSTANCE_ID           0U
 #define   ADC_INIT_SID              (0X00U)
 #define   ADC_SETUP_RSLT_BUF_SID    (0X0CU)
-#define   ADC_DEINIT_SID            (0X01U)
 #define   ADC_START_GRP_CONV_SID    (0X02U)
 #define   ADC_STOP_GRP_CONV_SID     (0X03U)
 #define   ADC_READ_GRP_SID          (0X04U)
@@ -67,7 +66,6 @@ void Adc_Init(const Adc_ConfigType* ConfigPtr)
 {
 
     uint8 i;
-    uint8 j;
     uint32 groupBase;
     boolean groupAlreadyConfigured;
 
@@ -291,7 +289,6 @@ static boolean Adc_InitializeModule(const Adc_ConfigType *ConfigPtr)
 
 static boolean Adc_ConfigureGroup(uint32 groupBase,const Adc_ChannelConfigType *ChannelConfigPtr)
 {
-    uint32 regValue;
 
     /*      validate pointers and group base        */
     if((groupBase == 0U) || (ChannelConfigPtr == NULL_PTR))
@@ -308,6 +305,7 @@ static boolean Adc_ConfigureGroup(uint32 groupBase,const Adc_ChannelConfigType *
             return Adc_ConfigureHardwareTrigger(groupBase, ChannelConfigPtr);
 
         default:
+            Adc_ErrorReport(ADC_INIT_SID,ADC_E_WRONG_TRIGG_SRC);
             return FALSE;
 
     }
@@ -322,21 +320,19 @@ static boolean Adc_ConfigureSoftwareTrigger(uint32 groupBase)
     /* enable Queue 0 arbitration   */
         regValue = ADC_REG32(groupBase,ADC_ARBPR_OFFSET);
 
-        regValue &= ~ADC_ARBPR_PRIO0_MASK;
-        regValue |= ADC_ARBPR_PRIO0;
-        regValue |= ADC_ARBPR_ASEN0;
+        regValue &= ~(ADC_ARBPR_PRIO1_MASK | ADC_ARBPR_CSM1) ;
+        regValue |= ADC_ARBPR_PRIO1(1U);
+        regValue |= ADC_ARBPR_ASEN1;
 
         ADC_REG32(groupBase, ADC_ARBPR_OFFSET)= regValue;
 
         /* configure queue 0 gating         */
-        regValue = ADC_REG32(groupBase, ADC_QMR0_OFFSET);
+        regValue = ADC_REG32(groupBase, ADC_QMR_OFFSET(1U));
 
-        regValue &= ~ADC_QMR0_ENGT_MASK;
-        regValue |= ADC_QMR0_ENGT_ALWAYS;
+        regValue &= ~(ADC_QMR_ENGT_MASK | ADC_QMR_ENTR);
+        regValue |= ADC_QMR_ENGT_ALWAYS;
 
-        regValue &= ~ADC_QMR0_ENTR;
-
-        ADC_REG32(groupBase, ADC_QMR0_OFFSET) = regValue;
+        ADC_REG32(groupBase, ADC_QMR_OFFSET(1U)) = regValue;
 
         return TRUE;
 }
@@ -348,21 +344,21 @@ static boolean Adc_ConfigureHardwareTrigger(uint32 groupBase, const Adc_ChannelC
     /* enable Queue 0 arbitration   */
         regValue = ADC_REG32(groupBase,ADC_ARBPR_OFFSET);
 
-        regValue &= ~ADC_ARBPR_PRIO0_MASK;
-        regValue |= ADC_ARBPR_PRIO0;
+        regValue &= ~(ADC_ARBPR_PRIO0_MASK | ADC_ARBPR_CSM0);
+        regValue |= ADC_ARBPR_PRIO0(3U);
         regValue |= ADC_ARBPR_ASEN0;
 
         ADC_REG32(groupBase, ADC_ARBPR_OFFSET)= regValue;
 
     /* configure queue 0 gating         */
-        regValue = ADC_REG32(groupBase, ADC_QMR0_OFFSET);
+        regValue = ADC_REG32(groupBase, ADC_QMR_OFFSET(0U));
 
-        regValue &= ~ADC_QMR0_ENGT_MASK;
-        regValue |= ADC_QMR0_ENGT_ALWAYS;
+        regValue &= ~ADC_QMR_ENGT_MASK;
+        regValue |= ADC_QMR_ENGT_ALWAYS;
 
-        regValue &= ~ADC_QMR0_ENTR;
-        regValue |= ADC_QMR0_ENTR;
-        ADC_REG32(groupBase, ADC_QMR0_OFFSET) = regValue;
+        regValue &= ~ADC_QMR_ENTR;
+        regValue |= ADC_QMR_ENTR;
+        ADC_REG32(groupBase, ADC_QMR_OFFSET(0U)) = regValue;
 
         return TRUE;
 }
@@ -392,4 +388,44 @@ static boolean Adc_ConfigureChannel(uint32 groupBase, const Adc_ChannelConfigTyp
     ADC_REG32(groupBase, ADC_RCR_OFFSET(channelNumber)) = 0U;
 
     return TRUE;
+}
+
+static boolean Adc_ConfigureQueue(uint32 groupBase,const Adc_ChannelConfigType *ChannelConfigPtr)
+{
+    uint32 regValue;
+    uint8 channelNumber;
+
+    if((groupBase == 0U)|| (ChannelConfigPtr == NULL_PTR))
+    {
+        return FALSE;
+    }
+
+    channelNumber = ChannelConfigPtr->channelNumber;
+
+    regValue = ADC_REG32(groupBase, ADC_QINR_OFFSET(0U));
+
+    regValue &= ~0X1FU;
+    regValue |= ((uint32)channelNumber & 0X0FU);
+    regValue |= (1U << 4U); /* Enable queue entry */
+
+    ADC_REG32(groupBase, ADC_QINR_OFFSET(0U)) = regValue;
+
+    return TRUE;
+}
+
+static void Adc_DelayUs(uint32 delay)
+{
+    volatile uint32 count;
+
+    while (delay > 0U)
+    {
+        count = ADC_DELAY_COUNT_PER_US;
+
+        while (count > 0U)
+        {
+            count--;
+        }
+
+        delay--;
+    }
 }

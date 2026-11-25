@@ -40,9 +40,12 @@
 #define ADC_ARBPR_OFFSET                (0X0084UL)
 #define ADC_ICLASS0_OFFSET              (0X00A0UL)
 
-#define ADC_QMR0_OFFSET                 (0X0104UL)
-#define ADC_QSR0_OFFSET                 (0X0108UL)
-#define ADC_QINR0_OFFSET                (0X0110UL)
+/*          group relative queue registers         */
+#define ADC_QCTRL_OFFSET(i)             (0X0100UL + ((uint32)(i) * 0X20UL))
+#define ADC_QMR_OFFSET(i)               (0X0104UL + ((uint32)(i) * 0X20UL))
+#define ADC_QSR_OFFSET(i)               (0X0108UL + ((uint32)(i) * 0X20UL))
+#define ADC_QBUR_OFFSET(i)              (0X010CUL + ((uint32)(i) * 0X20UL))
+#define ADC_QINR_OFFSET(i)              (0X0110UL + ((uint32)(i) * 0X20UL))
 
 #define ADC_CHCTR0_OFFSET               (0X0200UL)
 #define ADC_RCR0_OFFSET                 (0X0280UL)
