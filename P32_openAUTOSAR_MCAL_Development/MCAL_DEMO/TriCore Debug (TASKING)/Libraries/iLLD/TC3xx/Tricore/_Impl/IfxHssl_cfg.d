@@ -1,0 +1,30 @@
+IfxHssl_cfg.o :	../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxHssl_cfg.c
+../Libraries/iLLD/TC3xx/Tricore/_Impl/IfxHssl_cfg.c :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Configurations\Ifx_Cfg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Configurations\Ifx_Cfg.h" :
+IfxHssl_cfg.o :	..\Libraries\iLLD\TC3xx\Tricore\_Impl\IfxHssl_cfg.h
+..\Libraries\iLLD\TC3xx\Tricore\_Impl\IfxHssl_cfg.h :
+IfxHssl_cfg.o :	..\Libraries\iLLD\TC3xx\Tricore\_Impl\IfxHssl_cfg_TC39xB.h
+..\Libraries\iLLD\TC3xx\Tricore\_Impl\IfxHssl_cfg_TC39xB.h :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_Types.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_Types.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Platform\Tricore\Compilers\Compilers.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Platform\Tricore\Compilers\Compilers.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Platform\Tricore\Compilers\CompilerTasking.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Platform\Tricore\Compilers\CompilerTasking.h" :
+IfxHssl_cfg.o :	"C:\Infineon\AURIX-Studio-1.10.36\tools\Compilers\Tasking_1.1r8\ctc\include\stddef.h"
+"C:\Infineon\AURIX-Studio-1.10.36\tools\Compilers\Tasking_1.1r8\ctc\include\stddef.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Platform_Types.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Platform_Types.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_TypesTasking.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_TypesTasking.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\IfxHssl_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\IfxHssl_reg.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\IfxHssl_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\IfxHssl_regdef.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\Ifx_TypesReg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\Ifx_TypesReg.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\IfxHsct_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\IfxHsct_reg.h" :
+IfxHssl_cfg.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\IfxHsct_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\MCAL_DEMO\\Libraries\\Infra\\Sfr\\TC39xB\IfxHsct_regdef.h" :

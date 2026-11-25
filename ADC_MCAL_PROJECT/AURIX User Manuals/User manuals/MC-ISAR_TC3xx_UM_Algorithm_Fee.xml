@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EADATA><Fee><Double_Sector_Algorithm><Stateblockstructure><Elements><Elements_NAME>Overview of state block structure</Elements_NAME><Elements_DESC>The status information of the FEE sector is stored in dedicated set of pages (first 128 bytes of the WL) called State Block. The state block does not have a fixed address within the sector. This concept of “floating state blocks” helps to cope with any WL oriented issues that may occur within the sector.
+The status information serves several purposes - It identifies the active sector and the state of the other sector, even after unplanned resets. Additionally, it allows determining the erase count, i.e., the number of FEE sector erasures.
+The state block also stores the addresses of up to two un-erasable WLs of the sector that are detected when the sector is erased. These WLs are treated as failed and avoided while performing write operations.
+A new state block will be written to a sector either when the sector has been erased or when the sector becomes valid that is, it is used for data storage.
+
+The data content of the State Block has the following format:
+1.	8-bit Page Type Identifier which is specific for this type of page and has a big Hamming distance to other Page Type Identifiers. This identifier is required to differentiate between various page types with high safety. 
+First Page Id: 0x59
+Continuation Page Id: 0xC6
+Marker Page Id: 0x3A
+2.	8-bit Sector State which can be “erased” or “valid”, with a big Hamming distance. This is required to identify the active sector and the state of the other sector, even after unplanned resets.
+Sector State “Erased”: 0x1E
+Sector State “Valid”: 0xD1
+Stored twice for additional reliability. In case of inconsistency, the entire state block will be ignored.
+3.	12 bit Offset (in WLs) for quasi-static data check 
+The offset is used to calculate the address for resuming quasi-static data check and hardening operation.  As the check and hardening progresses, the offset value changes. The new offset value is stored back in to the state block so that it can be found on a restart after power interruption. Stored twice for additional reliability. In case of inconsistency, the entire state block will be ignored.
+4.	4-bit un-erasable WL Count, which determines the number of un-erasable WLs detected (0 to 2, extendable to 4). This information is required to avoid the use of un-erasable WLs while performing writes and reads.
+Stored twice for additional reliability. In case of inconsistency, the entire state block will be ignored
+5.	32-bit State Counter which is required to identify the active sector in certain cases after an unplanned reset, and to determine the erase count. It can be assumed that no overflow will occur. When the state is written for the first time, the state counter shall be set to 1. The counter will be incremented when writing a new state. Therefore, two increments are done in a complete cycle for one sector without interrupted GC.
+In case of an interruption during the copy process of GC is detected, the state counter will be additionally incremented by 2. If during GC the erase process is interrupted, the state counter will not be additionally incremented. The erase count can be calculated from the maximum state counter value in the state block of both sectors, divided by 2.
+Stored twice for additional reliability. In case of inconsistency, the entire state block will be ignored
+6.	The state block contains the 32-bit addresses of the detected unerasable WLs. The state block can contain 2 unerasable WL address (can be extended to 4 and unused pages (all 0s) will be used to store unerasable WL address). This information is required to avoid the usage of unerasable WLs while performing writes and reads.
+Stored twice for additional reliability. In case of inconsistency, the entire state block will be ignored Pages shall have Page Type ID=0xC6 and Unused bytes shall be 0. 2 additional pages are reserved to future use to allow for the possibility to record up to 4 unerasable WL addresses.
+7.	4 pages of all-1’s except page id to detect early interrupted erase operation &amp;amp; Pages shall have Page Type ID=0xC6
+8.	CRC32 field which is the 32 bit CRC value for data from Byte0 to Byte115 to ensure integrity of the State Block, particularly in case of early interrupted erase. Page shall have Page Type ID=0xC6 and special subsequent bytes
+9.	 Additional to the data content, each state block will have an 8-byte marker which is written in a separate operation after verifying the state block data contents. The marker can detect an interrupted write operation of the state block data. The marker pattern shall contain more ones than zeros, i.e., 0x3A, 0xF5, 0xAF, 0xAF, 0xF5, 0xF5, 0xAF, 0xAF.
+10.	Rest of the State Block data contents i.e., the pages which doesn’t contain WL addresses will have page type id only with no data contents i.e., they will be 0x00s by default. 
+      Remaining pages of the WL containing the State Block will be left unused. 
+
+&lt;i&gt;Note: The CRC32 field is based on the standard polynomial defined by IEEE 802.3 CRC32 polynomial with seed value 0. This is calculated using compiler intrinsic which internally uses the Flexible CRC engine implemented within the Aurix TC3X micro controller. &lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note: Bitwise little endian ordering is assumed. For example in 'Byte 3' the number of un-erasable WL count is stored in the upper nibble. With reference to byte  43, the number of un-erasable WL count resides in the upper nibble of byte 43.
+
+</Elements_DESC><DIAGRAMS><DIAGRAM>Fee_State_Block</DIAGRAM></DIAGRAMS></Elements></Stateblockstructure><Datablockstructure><Elements><Elements_NAME>Overview of NVM Data Block Structure</Elements_NAME><Elements_DESC>Each of the data blocks will be stored in DF0_EEPROM as per the following data block structure.
+1.	First page of the data block is called the header page. Header page structure is as follows:
+•	8-bit Page Type Identifier, which is specific for the type of page and has a big Hamming distance to other page type identifiers. Page type identifier is required to differentiate between various page types with high safety.
+a) First Page Id: 0xA3
+b) Continuation Page Id: 0x9C
+c) Marker Page Id: 0x65
+•	16-bit Block Number, which identifies the logical block.
+•	24-bit Block Cycle Counter, which identifies the instance of the data block and to limit the number of write cycles. When block is written for the first time, its Block Cycle Counter will be set to 1. Each time the block is updated, the counter will be incremented by 1. When the counter reaches the maximum configured number of write cycles, no further writing will occur and the counter will not be incremented any more. Write Cycles Exhausted production error will be raised if enabled. Additionally a job error notification will be called if configured. If the configuration parameter FeeNumberOfWriteCycles is configured as 0, then the data block will always be updated and the block cycle counter will overflow.
+•	15-bit Block Page Count, which specifies the number of pages occupied the block in DF0_EEPROM (including the header page and excluding the marker page). It is used to evaluate the block size, particularly for un-configured blocks. As per AUTOSAR 65535 bytes is the maximum block size, hence this can be accommodated within this field.
+•	1-bit Valid Information, which specifies whether the block is valid or is it invalidated by the user.
+2.	Following pages will have 1-byte Page Type Identifier (0x9C) followed by 7-byte data of the logical block. At the end of the block if there are bytes remaining until the end of the page, then they will be filled with 0x00s called stuff bytes.
+3.	Last page of the data block is the marker page, which marks the completion of data block programming. The marker page also contains 16-bit Block Number, 1-Bit Block validity information and 15-Bits Number of Pages occupied by the logical block, which are described in the header page section. Marker pattern of the first 4 bytes of the marker page: 0x65, 0xAF, 0xF5, 0xF5. 
+Data block is considered as inconsistent in case of [i] missing pages of the data block or [ii] missing (0x00s) marker page. Data block with a valid marker is considered as a consistent block.
+In case of missing marker page i.e., expected marker page containing 0x00s for the last written block, the page where the marker was expected, will be left untouched and its following page is considered as the empty page for future writes. This is to avoid the possibility of treating the block as consistent by treating the failed programming of next block’s header page as non-zero marker.
+Upon block invalidation request, only 2 pages will be written that is, the header and the marker page, irrespective of the size of the data block being invalidated. Header page with “Valid” bit (MSB of byte 7) as 0 and Number of data block pages as 1 (header and marker page). 
+</Elements_DESC><DIAGRAMS><DIAGRAM>Fee_NVM_Data_Block</DIAGRAM></DIAGRAMS></Elements></Datablockstructure><Garbagecollection><Elements><Elements_NAME>Overview of garbage collection process</Elements_NAME><Elements_DESC>Garbage collection is triggered when a write request to an NVM data block crosses the threshold or an immediate write request crosses the threshold. The garbage collection algorithm performs the sequence of steps listed below. As an initial stage it is assumed that sector 0 is active, the filling threshold has been crossed and sector 1 is erased.
+&lt;ol&gt;
+	&lt;li&gt;Copy the most recent version of all logical blocks from sector 0 to sector 1. Invalidated blocks are copied as well but not inconsistent blocks. This copy phase may be interrupted by read/write/cancel_all requests.&lt;/li&gt;
+	&lt;li&gt;Mark the correct end of the copy procedure by programming the state of sector 1 to valid and increment the state counter. From now on, sector 1 is active.&lt;/li&gt;
+	&lt;li&gt;If QS Blocks are configured then perform check and hardening operation on QS Memory region.&lt;/li&gt;
+	&lt;li&gt;Now sector 1 can be filled with data after pending data have been written.&lt;/li&gt;
+	&lt;li&gt;Erase sector 0 and verify the erase operation and check for un-erasable WLs.&lt;/li&gt;
+	&lt;li&gt;Mark the correct end of the erase procedure by programming the state of sector 0 to erased, update the un-erasable WL information and increment the state counter.&lt;/li&gt;
+&lt;/ol&gt;
+
+When sector 1 reaches the threshold, the same sequence will start with step 1 and interchanged roles of the sectors.
+
+See also the following figures: 
+•	&lt;i&gt;Overview of garbage collection process with intermediate states&lt;/i&gt;;
+•	&lt;i&gt;Example of sector change from S0 to S1, caused by normal write request&lt;/i&gt;; 
+•	&lt;i&gt;Example of sector change from S1 to S0, caused by immediate write request.&lt;/i&gt;
+</Elements_DESC><DIAGRAMS><DIAGRAM>Fee_Example_of_sector_change_from_S0_to_S1,_caused_by_normal_write_request</DIAGRAM><DIAGRAM>Fee_Example_of_sector_change_from_S1_to_S0,_caused_by_immediate_write_request</DIAGRAM></DIAGRAMS></Elements></Garbagecollection><Elements><Elements_NAME>FEE: Double Sector Algorithm</Elements_NAME><Elements_DESC>The Double-Sector algorithm helps to extend the life of the Flash by reducing the number of write-erase cycles.For the Double-Sector algorithm, an area of DFlash (DFLASH0), configured for use by the algorithm, is divided in to two sectors. When write requests are made, the Double-Sector algorithm fills the first DFlash sector with data blocks. The data block is simply appended to the end of the &lt;i&gt;stack&lt;/i&gt; of data blocks already written to the first sector. When the first sector is filled to a certain threshold, garbage collection is started which copies the most recent data blocks from the first sector to the second sector that is in the erased state. After the data from the first sector is copied to the second sector, the first sector is erased. Further write requests cause the data to be written to the end of the &lt;i&gt;stack&lt;/i&gt; of blocks in the second sector. The process repeats when more write requests causes the second sector to be filled to the threshold, triggering the garbage collection.
+
+As an initial state it is assumed that sector 0 is active, the data blocks are written into this sector and the threshold has been crossed and sector 1 is erased.
+&lt;ol&gt;
+	&lt;li&gt;Copy the most recent version of all logical blocks from sector 0 to sector 1. Invalidated blocks are copied as well but not inconsistent blocks.&lt;/li&gt;
+	&lt;li&gt;Mark the correct end of the copy procedure by programming the state of sector 1 to valid and increment the state counter. From now on, sector 1 is active.&lt;/li&gt;
+	&lt;li&gt;Erase sector 0 and verify the erase.&lt;/li&gt;
+	&lt;li&gt;Mark the end of the erase by programming the state of sector 0 to erased, record the un-erased WL information in the state block and increment the state Counter.     &lt;/li&gt;
+&lt;/ol&gt;
+
+</Elements_DESC><DIAGRAMS><DIAGRAM>Fee_Overview_of_garbage_collection_process_with_intermediate_states</DIAGRAM></DIAGRAMS></Elements></Double_Sector_Algorithm><Quasi_Static_Algorithm><SequenceofStates><Elements><Elements_NAME>Sequence of States</Elements_NAME><Elements_DESC>Initially, state “erase complete” shall be set. All other states shall be 0 (erased), as well as data information of the block.
+Write
+On a write request, first the state “write started” is set, then BCC and data are written and finally the state “write complete” is set.
+Thus an interrupted write operation can be safely detected by state evaluation; see chapter "Initialization after Reset".
+Erase
+After an erase request, it is important to avoid problems due to an undetected interrupted erase. Therefore, several steps are taken before the erase is started:
+&lt;ul&gt;
+	&lt;li&gt;Set state “erase started”;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+	&lt;li&gt;Destroy states “erase complete”, “write started” and “write complete” by setting all state bits to ‘1’.&lt;/li&gt;
+&lt;/ul&gt;
+Basically, state “erase started” is not needed. This state is effective only in the same ignition cycle before reset happens. 
+After successful erase, state “erase complete” is set.
+Thus an interrupted erase operation can be safely detected by state evaluation; see chapter "Initialization after Reset".
+
+The sequence of states for a quasi-static data block instance is shown in the Figure.
+
+</Elements_DESC><DIAGRAMS><DIAGRAM>Fee_Sequence_of_quasi-static_data_block_states</DIAGRAM></DIAGRAMS></Elements></SequenceofStates><Staticblockstructure><Elements><Elements_NAME>Quasi static data block structure</Elements_NAME><Elements_DESC>Status and data information of a quasi-static data block is stored in the same area. The minimum erasable size, that is 4KB logical sector is used, or a multiple of that for larger data blocks.
+The information is stored at fixed addresses given by configuration, without using an identifier. 
+The status information is contained only in the first mini sector; no CRC protection is needed. 
+If CRC protection is required for user data, this shall be handled by the application software. 
+
+The Quasi Static data block has the following contents:
+The Quasi-Static data block consists of a 4 page header that helps determine the state of the block.
+•	State “erase complete”: 
+−	Indicates whether erase is complete
+−	Shall be repaired after interrupted write of state (may be treated as a kind of marker)
+-           If the erase complete state marker repair fails, then the block status will be declared as invalid. The user can choose to either read the data block or erase it.
+            
+
+•	State “write started”: 
+−	Indicates whether data writing has been started
+−	Shall not be repaired after interrupted write of state
+
+•	State “write complete”: 
+−	Indicates whether data writing is complete
+−	Shall be repaired after interrupted write of state (may be treated as a kind of marker)
+-           If the write complete state marker repair fails, then the block status will be declared as invalid. The user can choose to either read the data block or erase it.
+
+•	State “erase started”: 
+−	Indicates whether erasing of data block has been started
+−	Shall not be repaired after interrupted write of state
+-           Marker will be written but not verified and re-programmed because the block will be erased.
+
+       A page with write or erase started contains
+       0x7777888811112222U
+       A page with erase or write complete contains
+       0x5555666633334444U
+
+
+•	Block Cycle Counter (BCC) and BCC complement: 
+−	Set to maximum of valid BCC values available for all instances of this data block plus 1, or set to 1 if no BCC value is known (example first initialization)
+−	Indicates sequence and number of write operations for the whole block
+−	Stored also as complemented value to increase reliability
+
+•	Data:
+−	User data bytes
+−	Unused bytes in last programmed page filled with 0x00 (stuffing bytes)
+
+•	Unused Pages: 
+−	Any unused pages of the QS data block remain as erased pages (all zeros).
+
+The following is the block structure used for Quasi-Static data. 
+</Elements_DESC><DIAGRAMS><DIAGRAM>Fee_Quasi-Static_data_block_format</DIAGRAM></DIAGRAMS></Elements></Staticblockstructure><Elements><Elements_NAME>Quasi-Static data handling</Elements_NAME><Elements_DESC>The standard EEPROM emulation algorithm is not efficient for relatively big data blocks with a low update rate (500 erase/write cycles over the entire QS data area). Therefore, in addition to the standard double-sector EEPROM emulation algorithm, a special algorithm for infrequently updated data blocks (called Quasi-Static data) is made available. The algorithm handling quasi-static data writes, reads and erases data blocks located in a separate area of the DFlash0. Quasi-static data is written to a separate area of the DFlash0.</Elements_DESC><DIAGRAMS/></Elements><Example_Handling><Elements><Elements_NAME>Example - Handling Quasi-Static data blocks</Elements_NAME><Elements_DESC>Quasi-Static data blocks can be configured to have one or more instances.
+The following figure shows how three different types of Quasi-Static data blocks can be handled by the application software. 
+
+The QS data blocks have different attributes:
+
+Data block N Area:
+Some old block instances are maintained, and some block instances are free for urgent write operations.
+•	Data block size: 4 KB
+•	Old data block instances to be maintained: 6
+•	Data block instances to be kept free: 3
+
+Data block N+1 Area:
+Only one block instance will always be available, like with standard EEPROM emulation. The other block instance has to be cleared before new data can be written.
+•	Data block size: 16 KB
+•	Old data block instances to be maintained: 0
+•	Data block instances to be kept free: 1
+
+Data block N+2 Area:
+In this corner case, there is only one block instance which has to be cleared before new data can be written. This makes sense if no backup is required, for example, calibration data.
+•	Data block size: 12 KB
+•	Old data block instances to be maintained: 0
+•	Data block instances to be kept free: 0
+
+In this example, data is updated by writing the data block to a kind of ring buffer. No more needed contents are erased if required.
+
+Reading, writing and erasing of a data block instance is triggered by the application software. Important write operations can be prioritized. 
+
+Each instance of a data block has a specific block number. Therefore, the existing API services for reading and writing can be used to access the data block instances individually.
+
+The Block Cycle Counter (BCC) is incremented by the FEE software on each write. It can be used to identify the sequence and the total number of write operations in a block area.
+
+
+
+</Elements_DESC><DIAGRAMS><DIAGRAM>Fee_Example_-_Handling_Quasi-Static_data_blocks</DIAGRAM></DIAGRAMS></Elements></Example_Handling></Quasi_Static_Algorithm><Introduction><Elements><Elements_NAME>Dflash0 Handling</Elements_NAME><Elements_DESC>Infineon implementation provides services to read and write two types of data blocks to the Flash memory. The first type of data block is called the NVM data block, which is further classified as normal or immediate data blocks. These blocks are read and written by the NVM layer. The FEE implements a double-sector algorithm to handle the NVM data blocks. The second type of data block is called Quasi-Static block and is handled by a separate algorithm. The Quasi-Static data blocks are written very rarely, totalling no more than 500 writes across all Quasi-Static data blocks. Architecturally, the Quasi-Static data blocks are seen to be read and written by the Quasi-Static Data Manager. The implementation of Infineon FEE is designed to handle these two types of blocks differently keeping in mind not to wear off the Flash un-necessarily.
+The size of memory configured for double-sector data should always be a multiple of 8KB (2x4KB).
+This is because the minimum erasable area supported by the flash hardware is 4KB. The size of memory configured for Quasi-Static data should also be a multiple of 4KB.
+The handling of DFlash by FEE can be partitioned into 3 broad areas.
+&lt;ol&gt;
+	&lt;li&gt;Handling standard data (NVM data accessed via MEMIF) using the Double-Sector algorithm.&lt;/li&gt;
+	&lt;li&gt;Handling quasi-static data (Quasi-static data accessed by a Quasi Static Data Manager)&lt;/li&gt;
+	&lt;li&gt;Handling the co-ordination of standard and QS data handling services.&lt;/li&gt;
+&lt;/ol&gt;
+
+</Elements_DESC><DIAGRAMS><DIAGRAM>Fee_Handling_of_DFlash0_by_NVM_and_Complex_Driver</DIAGRAM><DIAGRAM>Fee_Only_NVM_data</DIAGRAM><DIAGRAM>Fee_Quasi_static_data</DIAGRAM><DIAGRAM>Fee_Double-sector_data_and_Quasi-Static_data</DIAGRAM></DIAGRAMS></Elements></Introduction><Reporting_of_Production_error><Elements><Elements_NAME>Reprogramming a page</Elements_NAME><Elements_DESC>The FEE software reprograms a page only under the following conditions 
+•	After interrupted programming of marker page (NVM data/NVM state block/QS data block), write original intended value (to repair a marker page) 
+•	If hardening of Quasi-Static data is required, write read value (to refresh long-term data) 
+•	To corrupt the contents of a state block, write all 1s (to prevent problems due to early interrupted erase) </Elements_DESC><DIAGRAMS/></Elements><Elements><Elements_NAME>Interrupted operations</Elements_NAME><Elements_DESC>FEE operations like write and erase may be interrupted at any time by a reset, possibly in combination with a power failure. In this case, erase or  program /status write operations will be incomplete. 
+Therefore, incomplete write of user and state block data should be detected. This is done by writing additional marker pages after writing necessary data or state block information.  When a valid marker is read it means that the data was written successfully. 
+
+It could also happen that after an interrupt write operation, insufficiently programmed flash cells may fail later. This can be a problem particularly for state blocks. The FEE repairs the state block by re-writing marker page to the original intended value if interrupted write can lead to a problem.  Early interrupted erase in state blocks are detected by using CRC protection and over-writing all 1s to the state block before start of erase. 
+
+The pages of the Quasi-Static block header format and their sequence of writing helps to identify interrupted write and erase operations and recover.</Elements_DESC><DIAGRAMS/></Elements><Elements><Elements_NAME>Error detection and handling by hardware</Elements_NAME><Elements_DESC>Error detection and handling by hardware will save time.
+Therefore, error detection and handling by hardware will be used wherever possible.
+Refer FLS SAS for further details on handling of hardware errors.
+
+&lt;b&gt;Evaluation of PVER &lt;/b&gt;
+The DFlash handling software evaluates the PVER bit (Program Verify Error) after programming. If PVER bit is set, then FLS raises the PVER job error notification (Fee_17_JobProgErrorNotification).
+
+&lt;b&gt;Evaluation of EVER  &lt;/b&gt;
+The DFlash handling software evaluates the EVER bit (Erase Verify Error) after erase.  When EVER is set, it is necessary that FEE determine the un-erasable wordline by calling Fls_17_Dmu_VerifyErase / Fls_17_Dmu_VerifySectorErase. 
+
+&lt;b&gt;Evaluation of ECC Errors&lt;/b&gt;  
+Correctable ECC read errors are handled by hardware; they will be ignored by the DFlash handling software, except for the check/hardening operation in the quasi-static data algorithm. See chapter &lt;i&gt;Check and Hardening Process. &lt;/i&gt;
+Uncorrectable ECC read errors are managed by the DFlash handling software. Such errors will typically happen in the following cases: 
+•    Erase operation was interrupted; 
+•    Write operation was interrupted; 
+•    Page was overwritten with a different content, example to intentionally destroy a state block.
+
+&lt;b&gt;Evaluation of Flash Handling Errors &lt;/b&gt;
+The DFlash handling software evaluates hardware errors indicating faults caused by wrong Flash handling:
+•    SQER (sequence error), caused example by wrong sequence of DFlash commands;
+•    OPER (operation error), caused example by illegal operating conditions (Refer TS); 
+•    PROER (protection error), caused example by erase/write to protected sector.</Elements_DESC><DIAGRAMS/></Elements><Elements><Elements_NAME>Erase-Suspend feature</Elements_NAME><Elements_DESC>Erase may take a long time. Therefore, the erase-suspend feature offered by the AURIX™ TC3xx hardware is supported.
+This means that on an accepted user-read/user-write or invalidate request, the FEE software can suspend an ongoing erase operation. After the read or write operation is completed, the FEE software resumes the erase operation without user intervention and continues as if no read or write request had occurred. The support of the erase-suspend feature is configurable.
+The erase-suspend feature is specific to Infineon hardware and it is use and behaviour is not in the scope of AUTOSAR.
+&lt;i&gt;Note: During suspended erase, a new erase anywhere in the PFlash or DFlash memory is not allowed due to hardware/firmware restrictions. So, NVM writes are not allowed during QS erase even though erase-suspend feature is enabled because this might trigger GC erase operation.&lt;/i&gt;</Elements_DESC><DIAGRAMS/></Elements><Elements><Elements_NAME>Usage of FEE/FLS for boot code </Elements_NAME><Elements_DESC>AUTOSAR requires only one instance of the FEE and FLS in an application. However, many customers need the functionality also in the boot code, for example, to update FEE data during maintenance. Therefore, the FEE and FLS functions will be available not only for the run-time application but also for the boot code.
+
+Boot software and application software may have their own instances of the code. The block configurations used in boot and application modes may be different except for Quasi-Static data blocks. 
+
+&lt;b&gt;Assumption of use: It is assumed that the FEE software is called in the run-time application phase as well as in the boot phase only from one core.&lt;/b&gt;
+
+&lt;i&gt;Note: To program the PFlash, a separate Flash Loader is used during the boot phase which does not use the FLS. It is the job of the integrator to create a boot application consisting of the FEE module.&lt;/i&gt;</Elements_DESC><DIAGRAMS/></Elements><Elements><Elements_NAME>AUTOSAR FEE extensions and deviations</Elements_NAME><Elements_DESC>1.	Because of the stack-based storage algorithm, the physical address of a logical block cannot be calculated using a formula given the block number. To find a block with the requested Block Number, read requests (Fee_Read / Fee_17_GetPrevData) shall use a look-up table. The intention of the A2GT-PRQ-5337 is still met.
+2.	A read request will fail with job result MEMIF_BLOCK_INCONSISTENT in the following cases:
+&lt;ul&gt;
+	&lt;li&gt;The logical block does not exist. (as per A2GT-PRQ-11411)&lt;/li&gt;
+	&lt;li&gt;The most recent version of the block is not complete (missing marker).&lt;/li&gt;
+	&lt;li&gt;At least one Flash read access resulted in an error (e.g. when an un-correctable ECC error was detected)&lt;/li&gt;
+&lt;/ul&gt;
+3.	A block is invalidated by adding the header and marker page of the block to the stack with the “Valid” bit as 0.
+4.	Because of the stack-based storage algorithm, the address of a logical block cannot be calculated. Fee_Write / FeeInvalidateBlock uses the next free (i.e. erased) page in the current sector, cached during initialization or writing. 
+5.	Extension of AUTOSAR SWS for Fee_Write and Fee_InvalidateBlock: If the Block Cycle Counter of the addressed block has already reached its maximum value, the following steps are  executed: 
+&lt;ul&gt;
+	&lt;li&gt;Report write cycles exhausted production error to Mcal_Wrapper&lt;/li&gt;
+	&lt;li&gt;Set job result to MEMIF_JOB_FAILED&lt;/li&gt;
+	&lt;li&gt;Raise NVM job error notification, if configured&lt;/li&gt;
+&lt;/ul&gt;
+6.	In case Fee_Cancel is requested when a user read operation is ongoing, an IFX FEE specific API Fls_17_Dmu_CancelNonEraseJobs will be called, which cancels only an ongoing read job; no DETs are available. Fls_17_Dmu_Cancel will not be called.
+7.	 Fee_Cancel works very differently compared to the expectations of Autosar. This is mainly due to the choice of the double sector algorithm for implementing EEPROM emulation. These deviations have already been called out as part of the requirements. 
+8.	 Fee_GetStatus shall return MEMIF_BUSY not only while a job is executed but also while it is waiting for execution. During garbage collection, the status MEMIF_BUSY_INTERNAL shall be returned only  until a new request is accepted; after which the status shall switch to MEMIF_BUSY.
+9.	Since double-sector algorithm is used with threshold limit for triggering GC, immediate block’s write requests during GC can be accommodated within the pre-erased threshold area of the active FEE sector. Hence, the API Fee_EraseImmediateBlock is implemented with no functionality, it just returns E_NOT_OK.</Elements_DESC><DIAGRAMS/></Elements><Elements><Elements_NAME>Notes</Elements_NAME><Elements_DESC>&amp;nbsp;
+&lt;ol&gt;
+	&lt;li&gt;FEE driver is the only driver which uses the services of the FLS driver.&lt;/li&gt;
+	&lt;li&gt;This implementation assumes the use case in which the dependent module APIS used by FLS and FEE (that is, DET, Mcal_Wrapper, SchM etc.) are part of the software in which FLS and FEE drivers exist.&lt;/li&gt;
+	&lt;li&gt;The configuration parameter FeePollingMode is pre-configured/fixed as FALSE (STD_OFF) and hence expects notifications from FLS on completion of the job.&lt;/li&gt;
+	&lt;li&gt;In Fee_MainFunction, the state transitions are done first followed by execution of the job. Hence there can be a delay of one cycle between the job status and Fee_MainFunction state variable update.&lt;/li&gt;
+	&lt;li&gt;All the global and static variables required for the functioning of the FEE Driver are implemented as elements of a structure&lt;i&gt;.&lt;/i&gt;&lt;/li&gt;
+	&lt;li&gt;The FEE configuration to be used is fixed at precompile time itself i.e. Fee_Config. Since FEE code shall be usable in the boot mode and application mode, the user can change the configuration pointer in his application.&lt;/li&gt;
+	&lt;li&gt;BMD files compliant with Autosar Schema is provided for all derivatives along with XDM parameter definition files.&lt;/li&gt;
+	&lt;li&gt;FEE is implemented as variant Post Build.&lt;/li&gt;
+	&lt;li&gt;FEE Driver source code is complaint as per MISRA 2012 standard. Any violation is justified for each instance.&lt;/li&gt;
+	&lt;li&gt;The plugin file Manifest.mf is provided to describe to the tool the location of property files. Fee driver uses Resource property file for binding between a derivative and its property file.&lt;/li&gt;
+	&lt;li&gt;The recommended procedure as per hardware target specification for implementing EEPROM emulation write operations will be followed. As per this procedure, in order to perform a write, the content of the page or word line is read first in to RAM. The write operation is then performed on the word line or page of the flash. After programming the page or word line, the data is read back from the flash and compared to the copy in the RAM to detect any data  that was disturbed due to the write. If there was a comparison failure, then the write is retried on a different word line or page using the same procedure. It is possible that multiple blocks may span or reside in the word line and their content may be disturbed due to the programming (write) operation. The FEE Double Sector algorithm considers such situations when performing retries of failed programming operations.&lt;/li&gt;
+	&lt;li&gt;FEE will only handle DFLASH0 of the Aurix-2G hardware. UCB, HSM-DFLASH, CFS are not in the scope of FEE.&lt;/li&gt;
+	&lt;li&gt;Handling of DFLASH0: The DFLASH handling software(FLS) only handles DFLASH0.DFLASH1(HSM Flash),which is not available in all devices,will be reserved for HSM(Hardware Security Module).&lt;/li&gt;
+	&lt;li&gt;Configuration of DFLASH0: The DFLASH0 handling software (FLS)offers a configurable DFLASH0 size, as customers may be forced by contract to use only a subset of the available DFLASH0(marking option).The allowed subset area will always start at DFLASH0 start address and is contiguous.&lt;/li&gt;
+&lt;/ol&gt;</Elements_DESC><DIAGRAMS/></Elements><Elements><Elements_NAME>Conditions to raise production error and illegal state notifications</Elements_NAME><Elements_DESC></Elements_DESC><DIAGRAMS><DIAGRAM>Fee_Condition_for_raising_illegal_state_notification</DIAGRAM><DIAGRAM>Fee_Conditions_to_raising_production_error</DIAGRAM><DIAGRAM>Fee_Conditions_to_raise_production_error_Contd</DIAGRAM></DIAGRAMS></Elements></Reporting_of_Production_error><Revision_History><version><VER>1.0</VER><DATE>18-09-2024 13:51:53</DATE><DESC>Released</DESC></version><version><VER>0.1</VER><DATE>08-08-2024 14:36:15</DATE><DESC>For Inspection</DESC></version></Revision_History></Fee></EADATA>

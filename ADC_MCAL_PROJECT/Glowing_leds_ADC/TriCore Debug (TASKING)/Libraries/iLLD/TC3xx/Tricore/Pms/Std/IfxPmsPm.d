@@ -1,0 +1,130 @@
+IfxPmsPm.o :	../Libraries/iLLD/TC3xx/Tricore/Pms/Std/IfxPmsPm.c
+../Libraries/iLLD/TC3xx/Tricore/Pms/Std/IfxPmsPm.c :
+IfxPmsPm.o :	..\Libraries\iLLD\TC3xx\Tricore\Pms\Std\IfxPmsPm.h
+..\Libraries\iLLD\TC3xx\Tricore\Pms\Std\IfxPmsPm.h :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxPms_cfg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxPms_cfg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Configurations\Ifx_Cfg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Configurations\Ifx_Cfg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxPms_cfg_TC39xB.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxPms_cfg_TC39xB.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxScu_cfg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxScu_cfg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxScu_bf.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxScu_bf.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxScu_cfg_TC39xB.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxScu_cfg_TC39xB.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_Types.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_Types.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Platform\Tricore\Compilers\Compilers.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Platform\Tricore\Compilers\Compilers.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Platform\Tricore\Compilers\CompilerTasking.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Platform\Tricore\Compilers\CompilerTasking.h" :
+IfxPmsPm.o :	"C:\Infineon\AURIX-Studio-1.10.36\tools\Compilers\Tasking_1.1r8\ctc\include\stddef.h"
+"C:\Infineon\AURIX-Studio-1.10.36\tools\Compilers\Tasking_1.1r8\ctc\include\stddef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Platform_Types.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Platform_Types.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_TypesTasking.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_TypesTasking.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxScu_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxScu_reg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxScu_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxScu_regdef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\Ifx_TypesReg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\Ifx_TypesReg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.asm.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.asm.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_Types.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_Types.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_IntrinsicsTasking.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_IntrinsicsTasking.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_Types.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\Ifx_Types.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Pms\Std\IfxPmsEvr.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Pms\Std\IfxPmsEvr.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxCpu_cfg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxCpu_cfg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxCpu_cfg_TC39xB.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxCpu_cfg_TC39xB.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxCpu_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxCpu_reg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxCpu_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxCpu_regdef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxSrc_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxSrc_reg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxSrc_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxSrc_regdef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxStm_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxStm_reg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxStm_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxStm_regdef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Service\\CpuGeneric\_Utilities\Ifx_Assert.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Service\\CpuGeneric\_Utilities\Ifx_Assert.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuCcu.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuCcu.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_PinMap\IfxScu_PinMap.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_PinMap\IfxScu_PinMap.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\\_PinMap\\TC39xB\IfxScu_PinMap_TC39xB_LFBGA292.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\\_PinMap\\TC39xB\IfxScu_PinMap_TC39xB_LFBGA292.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Port\Std\IfxPort.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Port\Std\IfxPort.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxPort_cfg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxPort_cfg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxPort_cfg_TC39xB.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxPort_cfg_TC39xB.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPort_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPort_reg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPort_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPort_regdef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\\_PinMap\Ifx_PinMap.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\\_PinMap\Ifx_PinMap.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxSmu_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxSmu_reg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxSmu_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxSmu_regdef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxDmu_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxDmu_reg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxDmu_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxDmu_regdef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPms_bf.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPms_bf.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPms_reg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPms_reg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPms_regdef.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxPms_regdef.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Irq\IfxCpu_Irq.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Irq\IfxCpu_Irq.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Src\Std\IfxSrc.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Src\Std\IfxSrc.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxSrc_cfg.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxSrc_cfg.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxSrc_cfg_TC39xB.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\_Impl\IfxSrc_cfg_TC39xB.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Cpu\Std\IfxCpu_Intrinsics.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuCcu.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuCcu.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxCpu_bf.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\Infra\\Sfr\\TC39xB\IfxCpu_bf.h" :
+IfxPmsPm.o :	"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h"
+"C:\\Users\\Admin\\AURIX-v1.10.36-workspace\\Glowing_leds_ADC\\Libraries\\iLLD\\TC3xx\\Tricore\Scu\Std\IfxScuWdt.h" :

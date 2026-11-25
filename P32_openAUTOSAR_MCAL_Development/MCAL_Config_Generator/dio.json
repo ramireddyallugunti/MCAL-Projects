@@ -1,0 +1,19 @@
+{
+    "channels": [
+        {
+            "name": "LED1",
+            "port": 13,
+            "pin": 0
+        },
+        {
+            "name": "LED2",
+            "port": 13,
+            "pin": 1
+        },
+        {
+            "name": "LED3",
+            "port": 13,
+            "pin": 2
+        }
+    ]
+}

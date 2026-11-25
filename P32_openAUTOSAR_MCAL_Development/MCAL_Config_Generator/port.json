@@ -1,0 +1,31 @@
+{
+    "pins": [
+        {
+            "port": 13,
+            "pin": 0,
+            "direction": "PORT_PIN_OUT",
+            "mode": "PORT_GPIO",
+            "input_mode": "PORT_INPUT_NOPULL",
+            "output_mode": "PORT_OUTPUT_PUSHPULL",
+            "level": "STD_HIGH"
+        },
+        {
+            "port": 13,
+            "pin": 1,
+            "direction": "PORT_PIN_OUT",
+            "mode": "PORT_GPIO",
+            "input_mode": "PORT_INPUT_NOPULL",
+            "output_mode": "PORT_OUTPUT_PUSHPULL",
+            "level": "STD_HIGH"
+        },
+        {
+            "port": 13,
+            "pin": 2,
+            "direction": "PORT_PIN_OUT",
+            "mode": "PORT_GPIO",
+            "input_mode": "PORT_INPUT_NOPULL",
+            "output_mode": "PORT_OUTPUT_PUSHPULL",
+            "level": "STD_LOW"
+        }
+    ]
+}
